@@ -1,0 +1,22 @@
+.results__list {
+    .movie__item {
+        display: inline-block;
+        .movie__title--container {
+            display: flex;
+            .favourite__icon {
+                height: 25px;
+                padding: 10px;
+            }
+            .movie__title {
+                text-align: center;
+            }
+        }
+        .heart {
+            width: 45px;
+            background: url(./assets/images/no-favourite.png) no-repeat contain;
+        }
+    }
+}
+.no-favourite {
+            background: url(./assets/images/no-favourite.png) no-repeat contain;
+        }

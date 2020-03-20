@@ -9,37 +9,9 @@
   </head>
   <body>
     <div class="page">
-      <header class="header">
-        <h1>Buscador de series</h1>
-        <div class="search__box">
-          <form>
-            <label for="search__input"></label>
-            <input
-              type="text"
-              placeholder="Escribe el título de tu película favorita aquí"
-              class="search__input"
-              id="search__input"
-            />
-            <button class="search__button">¡Busca tu película!</button>
-          </form>
-        </div>
-      </header>
-      <main class="content">
-        <section class="favourites">
-          <div class="favourites__title">
-            <img class="favourite__section favourite__icon" src="./assets/images/favourite.png">
-            <h2>Mis favoritos</h2>
-          </div>
-          <ul class="favourites__list"></ul>
-          <button class="favourite__button--remove hidden">Borrar lista de favoritos</button>
-        </section>
-        <section class="results__box">
-          <ul class="results__list"></ul>
-        </section>
-      </main>
-      <footer class="footer">
-        <a><img src="./assets/images/logo-adalab-80px.png"/></a>
-      </footer>
+      <partial src="_header.html" label="header"></partial>
+      <partial src="_content.html" label="content"></partial>
+      <partial src="_footer.html" label="footer"></partial>
     </div>
     <script type="text/javascript" src="./assets/js/main.js"></script>
   </body>

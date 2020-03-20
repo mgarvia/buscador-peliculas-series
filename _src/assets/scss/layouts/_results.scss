@@ -1,14 +1,15 @@
 .results__list {
     .movie__item {
         display: inline-block;
+        margin: 2px;
+        .movie__image {
+            padding: 5px 5px 0 5px;
+        }
         .movie__title--container {
             display: flex;
-            .favourite__icon {
-                height: 25px;
-                padding: 10px;
-            }
+            width: 210px;
             .movie__title {
-                text-align: center;
+                padding: 0 5px;
             }
         }
         .heart {
@@ -17,6 +18,26 @@
         }
     }
 }
-.no-favourite {
-            background: url(./assets/images/no-favourite.png) no-repeat contain;
-        }
+.favourite__icon {
+    height: 25px;
+    padding: 0 12px;
+    margin-right: 12px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 12px;
+    left:5px;
+}
+.favourite {   
+    background-color: #1f9c8d;
+    // padding: 5px 5px 0 5px;
+}
+.favourite__text {
+    color: #1f9c8d;
+}
+.heart__favourite {
+    background-image: url("/assets/images/favourite.png");
+}
+.heart__no-favourite {
+    background-image: url("/assets/images/no-favourite.png");
+}

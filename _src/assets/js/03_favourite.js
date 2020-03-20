@@ -1,17 +1,24 @@
 'use strict';
 
-// Funciones para guradar en favoritos y estilos
-
 function addListenerToFavIcons() {
   let favIconsArr = document.querySelectorAll('.favourite__icon--movie');
-
   for (let icon of favIconsArr) {
-    icon.addEventListener('click', addToFavouriteMovies);
-    icon.addEventListener('click', paintFav);
+    icon.addEventListener('click', saveFavouriteMovies);
   }
 }
 
-function addToFavouriteMovies(event) {
+function paintDefaultFav(event) {
+  let moviesArr = resultsList.querySelectorAll('li');
+  for (let movie of moviesArr) {
+    let MovieIndex = favouriteMovies.findIndex(favMovie => favMovie.id === movie.id);
+    let favMovie = movie.firstElementChild.nextElementSibling.firstElementChild;
+    if (MovieIndex !== -1) {
+      addFavStyle(favMovie);
+    }
+  }
+}
+
+function saveFavouriteMovies(event) {
   let currentMovie = event.currentTarget;
   const movieId = currentMovie.parentElement.parentElement.id;
   const movieTitle = currentMovie.nextElementSibling.title;
@@ -26,33 +33,17 @@ function addToFavouriteMovies(event) {
 
   if (currentMovie.classList.contains('heart__no-favourite')) {
     favouriteMovies.push(movieObject);
-    // addFavStyle(currentMovie);
+    addFavStyle(currentMovie);
   } else {
     let MovieIndex = favouriteMovies.findIndex(movie => movie.id === movieId);
     favouriteMovies.splice(MovieIndex, 1);
-    // removeFavStyle(currentMovie);
-    removeFavStyleFromResult(currentMovie);
+    removeFavStyle(currentMovie);
   }
 
   setToLocal();
-//   printFavouriteList();
-//   removeFavouriteListButton.classList.remove('hidden');
+  printFavouriteList();
+  removeFavButton.classList.remove('hidden');
 }
-
-function paintFav() {
-    let moviesArr = resultsList.querySelectorAll('li');
-  
-    for (let movie of moviesArr) {
-      let MovieIndex = favouriteMovies.findIndex(favMovie => favMovie.id === movie.id);
-      let currentMovie = movie.firstElementChild.nextElementSibling.firstElementChild;
-      if (MovieIndex !== -1) {
-        addFavStyle(currentMovie);
-      } else {
-        removeFavStyle(currentMovie);
-      }
-    }
-    printFavouriteList();
-  }
 
 function addFavStyle(selectedMovie) {
   selectedMovie.classList.remove('heart__no-favourite');
@@ -61,53 +52,74 @@ function addFavStyle(selectedMovie) {
   selectedMovie.parentElement.previousElementSibling.classList.add('favourite__background');
 }
 
-function removeFavStyle(selectedMovie) {
-  selectedMovie.classList.remove('heart__favourite');
-  selectedMovie.classList.add('heart__no-favourite');
-  selectedMovie.nextElementSibling.classList.remove('favourite__textColor');
-  selectedMovie.parentElement.previousElementSibling.classList.remove('favourite__background');
-}
+function removeFavStyle(movie) {
+  let moviesArr = document.querySelectorAll('.movie__item');
+  const movieId = movie.parentElement.parentElement.id;
 
-function removeFavStyleFromResult(movie) { //Función para quitar estilo en resultado de búsqueda si quitas desde favoritos
-    let moviesArr = document.querySelectorAll('.movie__item');
-    const movieId = movie.parentElement.parentElement.id;
-  
-    for(let movie of moviesArr) {
-      if(movie.id === movieId) {
-        const searchMovie = movie.firstElementChild.nextElementSibling.firstElementChild;
-        removeFavStyle(searchMovie);
-        console.log(searchMovie);
-      }
+  for(let movie of moviesArr) {
+    if(movie.id === movieId) {
+      const selectedMovie = movie.firstElementChild.nextElementSibling.firstElementChild;
+      selectedMovie.classList.remove('heart__favourite');
+      selectedMovie.classList.add('heart__no-favourite');
+      selectedMovie.nextElementSibling.classList.remove('favourite__textColor');
+      selectedMovie.parentElement.previousElementSibling.classList.remove('favourite__background');
     }
   }
+}
 
-function printFavouriteList() { //Función para pintar la lista de favoritos
+function printFavouriteList() {
+  if(favouriteList !== []) {
+    removeFavButton.classList.remove('hidden')
+  } else {
+    removeFavButton.classList.add('hidden')
+  }
   favouriteList.innerHTML = '';
   for(let movie of favouriteMovies) {
-    favouriteList.innerHTML += `<li id=${movie.id} class="favourite__item">
-          <div class="favourite__image">
-              <a href=${movie.link} alt="ver ficha de ${movie.title}" title="ver ficha de ${movie.title}" target="local">
-              <img src=${movie.image}>
-              </a>
-          </div>
-          <div class="favourite__title--container">
-              <a class="favourite__icon favourite__icon--favList heart__favourite"></a>
-              <p class="favourite__title" title="${movie.title}">${movie.title}<p/>
-          </div>
-          </li>`
-    ;
+
+    const movieLi = document.createElement('li');
+    movieLi.setAttribute('id', movie.id);
+    movieLi.setAttribute('class', 'favourite__item');
+
+    const movieImgBox = document.createElement('div');
+    movieImgBox.setAttribute('class', 'favourite__image');
+
+    const movieImgLink = document.createElement('a');
+    movieImgLink.setAttribute('href', movie.url);
+    movieImgLink.setAttribute('alt', `ver ficha de ${movie.title}`);
+    movieImgLink.setAttribute('title', `ver ficha de ${movie.title}`);
+    movieImgLink.setAttribute('target', 'local');
+
+    const movieImg = document.createElement('img');
+    movieImg.setAttribute('src', movie.image);
+
+    const movieTitleBox = document.createElement('div');
+    movieTitleBox.setAttribute('class', 'favourite__title--container');
+
+    const movieIconFav = document.createElement('a');
+    movieIconFav.setAttribute('class', 'favourite__icon favourite__icon--favList heart__favourite');
+
+    const movieTitle = document.createElement('p');
+    movieTitle.setAttribute('class', 'favourite__title');
+    movieTitle.setAttribute('title', movie.title);
+    const movieTitleContent = document.createTextNode(movie.title);
+
+    favouriteList.appendChild(movieLi);
+    movieLi.appendChild(movieImgBox);
+    movieImgBox.appendChild(movieImgLink);
+    movieImgLink.appendChild(movieImg);
+
+    movieLi.appendChild(movieTitleBox);
+    movieTitleBox.appendChild(movieIconFav);
+    movieTitleBox.appendChild(movieTitle);
+    movieTitle.appendChild(movieTitleContent);
+
     addListenerToFavourites();
   }
 }
 
-
-
-function addListenerToFavourites() { //Función para añadir escuchadores a corazones de favoritos
+function addListenerToFavourites() {
   let favIconArr = document.querySelectorAll('.favourite__icon--favList');
-
   for(let icon of favIconArr) {
-    icon.addEventListener('click', addToFavouriteMovies);
+    icon.addEventListener('click', saveFavouriteMovies);
   }
-
 }
-

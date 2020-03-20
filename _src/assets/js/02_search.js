@@ -1,14 +1,12 @@
-'use strict'
-
-//Funciones para buscar películas y pintar el resultado
+'use strict';
 
 function searchMovies() {
   event.preventDefault();
   fetch(urlBase + searchInput.value)
     .then(response => response.json())
     .then(data => {
-      moviesList = data;
-      printSearchResult(moviesList);
+      moviesSearchedList = data;
+      printSearchResult(moviesSearchedList);
     });
 }
 
@@ -52,6 +50,7 @@ function printSearchResult(moviesArr) {
     const movieTitleContent = document.createTextNode(movie.show.name);
 
     resultsList.appendChild(movieLi);
+
     movieLi.appendChild(movieImgBox);
     movieImgBox.appendChild(movieImgLink);
     movieImgLink.appendChild(movieImg);
@@ -63,5 +62,5 @@ function printSearchResult(moviesArr) {
 
     addListenerToFavIcons();
   }
-  paintFav();
+  paintDefaultFav();
 }

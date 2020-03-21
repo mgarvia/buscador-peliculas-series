@@ -93,7 +93,7 @@ function printFavouriteList() {
     movieTitleBox.setAttribute('class', 'favourite__title--container');
 
     const movieIconFav = document.createElement('a');
-    movieIconFav.setAttribute('class', 'favourite__icon favourite__icon--favList heart__favourite');
+    movieIconFav.setAttribute('class', 'favourite__icon favourite__icon--favList movie__favourite');
     movieIconFav.setAttribute('title', 'Eliminar de favoritos')
 
     const movieTitle = document.createElement('p');
@@ -115,8 +115,10 @@ function printFavouriteList() {
   }
   if(favouriteList.innerHTML !== '') {
     removeFavButton.classList.remove('hidden')
+    favMessage.classList.add('hidden')
   } else {
     removeFavButton.classList.add('hidden')
+    favMessage.classList.remove('hidden')
   }
 }
 

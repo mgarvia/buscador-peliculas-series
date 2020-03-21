@@ -17,3 +17,7 @@ let favouriteMovies = getFromLocal();
 const iconSearch = document.querySelector('.icon__search--container');
 const titleSearch = document.querySelector('#missing-o');
 const removeSearchBtn = document.querySelector('.remove__search--button');
+const welcome = document.querySelector('.landing');
+const inputBox = document.querySelector('.search__container');
+const favMessage = document.querySelector('.favourites__message');
+const welcomeText = document.querySelector('.welcome');

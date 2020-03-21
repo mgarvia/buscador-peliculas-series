@@ -11,6 +11,7 @@ function searchMovies() {
 }
 
 function printSearchResult(moviesArr) {
+  welcome.classList.add('hidden')
   resultsList.innerHTML = '';
   searchText.innerHTML = `"${searchInput.value}"`;
   resultTitle.classList.remove('hidden');

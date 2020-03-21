@@ -1,46 +1,40 @@
 .favourites {
   height: 100%;
-  width: 30%;
+  width: 25vw;
   position: relative;
   .favourites__title {
-    // position: fixed;
-    // top: 155px;
-    // width: 29%;
-    // height: 100px;
-    // background-color: white;
     font-family: "Righteous";
-    // text-transform: uppercase;
     font-size: 14px;
-    // z-index: 1;
+    text-align: center;
+    padding-left: 10px;
+    width: 24%;
     .favourite__icon {
       top: 45px;
+      left: -70px;
     }
     h2 {
-      margin-left: 50px;
+      margin-left: 35px;
     }
   }
   .favourites__list {
-    // border: 1px solid red;
     margin-top: 85px;
     padding: 10px;
     padding-right: 15px;
   }
-  .favourite__remove--button {
-    position: relative;
-    width: 60%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;
-    border-style: none;
-    border-radius: 25px;
-    padding: 10px;
-    margin-left: 15px;
-    &:hover {
-      background-color: grey;
+  .button__container {
+    text-align: center;
+    .favourite__remove--button {
+      width: 60%;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 14px;
+      border-style: none;
+      border-radius: 25px;
+      padding: 10px;
+      &:hover {
+        background-color: grey;
+      }
     }
   }
-}
-.results__box {
-  width: 70%;
 }
 
 .favourite__item {
@@ -72,14 +66,26 @@
 }
 .favourite__background {
   background-color: #1f9c8d;
-  // padding: 5px 5px 0 5px;
 }
 .favourite__textColor {
   color: #1f9c8d;
 }
 .heart__favourite {
   background-image: url("/assets/images/favourite.png");
+  &:hover {
+    background-image: url("/assets/images/no-favourite.png");
+  }
 }
 .heart__no-favourite {
   background-image: url("/assets/images/no-favourite.png");
+  &:hover {
+    background-image: url("/assets/images/favourite.png");
+  }
+}
+.favourites__message {
+  font-size: 14px;
+  text-align: center;
+  .favourites__message--heart {
+    display: inline-block;
+  }
 }

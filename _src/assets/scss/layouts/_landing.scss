@@ -1,0 +1,39 @@
+.landing {
+  margin: auto;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .welcome {
+        font-size: 50px;
+        font-family: 'Righteous';
+        text-transform: uppercase;
+        color: #C7D0D8;
+    }
+    .welcome__gif {
+        width: 80px;
+    }
+}
+
+.input__shadow {
+  box-shadow: 0 0 0 rgba(204,169,44, 0.4);
+  animation: input__shadow 2s infinite;
+  &:hover, &:focus {
+    animation: none;
+  }
+}
+
+@keyframes input__shadow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(199,208,216, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 20px rgba(199,208,216, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(199,169,216, 0);
+      }
+  }

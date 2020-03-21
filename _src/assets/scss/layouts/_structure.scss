@@ -25,13 +25,11 @@ ul {
   display: none;
 }
 .subtitle__section {
-  position: fixed;
+    position: fixed;
     top: 155px;
-    width: 100%;
     height: 100px;
+    width: 100%;
     background-color: white;
-    // font-family: "Righteous";
     text-transform: uppercase;
-    // font-size: 14px;
     z-index: 1;
 }

@@ -12,6 +12,8 @@ function searchMovies() {
 
 function printSearchResult(moviesArr) {
   resultsList.innerHTML = '';
+  searchText.innerHTML = `"${searchInput.value}"`;
+  resultTitle.classList.remove('hidden');
 
   for (let movie of moviesArr) {
     let movieImage = movie.show.image;

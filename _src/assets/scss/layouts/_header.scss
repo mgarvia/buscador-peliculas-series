@@ -1,5 +1,10 @@
 .header {
+    * {
+        margin: 0px;
+    }
     position: fixed;
+    left: 0;
+    right: 0;
     top: 0;
     width: 100vw;
     padding: 15px;
@@ -7,6 +12,7 @@
     z-index: 2;
     display: flex;
     justify-content: center;
+    box-shadow: 15px 0px 10px lightgrey;
     .header__container {
         max-width: 800px;
 
@@ -15,7 +21,6 @@
         justify-content: center;
         align-items: center;
         .logo__container {
-            // border: 1px solid red;
             .movie__icon {
                 display: inline-block;
                 height:50px;
@@ -34,6 +39,7 @@
                     .hidden-o {
                         opacity: 0;
                     }
+                    
                         
                 }
                 .icon__search--container {
@@ -50,26 +56,24 @@
         .search__container {
             margin: 10px;
             width: 500px;
-            // border: 1px solid red;
-            // display: flex;
-            // flex-direction: row;
-            // justify-content: space-between;
             form {
                 display: inline-flex;
-                // border: 1px solid blue;
                 width: 100%;
+                position: relative;
                 .search__input {
-                    // display: inline-block;
                     width: 90%;
                     height: 40px;
                     padding-left: 10%;
-                    // padding-right: 50px;
                     font-family: 'Montserrat', sans-serif;
                     font-size: 16px;
                     color: $colorFontSecondary;
                     text-align: center;
                     background-color: $colorMain;
                     border-style: none;
+                    &:focus, &:valid{
+                        background-color: #e8f0fe;
+                        color: black;
+                    }
                     &::placeholder {
                         color: $colorFontSecondary;
                         text-transform: uppercase;
@@ -96,9 +100,26 @@
 .moveIcon {
     transform: translate(119px, 51px) scale(0.6);
     transition: transform ease 0.8s;
+    z-index: 1;
+    &:hover {
+      opacity: 0.5;
+    }
 }
 
 .show-o {
     opacity: 1;
     transition: 1s opacity ease;
+}
+.remove__search--button {
+    position: absolute;
+    border-style: none;
+    background-color: transparent;
+    left: 8px;
+    bottom: 9px;
+    font-family: Righteous;
+    font-size: 12px;
+    font-weight: 200;
+    color: grey;
+    border: 2px solid grey;
+    border-radius: 50px;
 }

@@ -68,12 +68,9 @@ function removeFavStyle(movie) {
 }
 
 function printFavouriteList() {
-  if(favouriteList !== []) {
-    removeFavButton.classList.remove('hidden')
-  } else {
-    removeFavButton.classList.add('hidden')
-  }
   favouriteList.innerHTML = '';
+  removeFavButton.classList.add('hidden');
+
   for(let movie of favouriteMovies) {
 
     const movieLi = document.createElement('li');
@@ -97,6 +94,7 @@ function printFavouriteList() {
 
     const movieIconFav = document.createElement('a');
     movieIconFav.setAttribute('class', 'favourite__icon favourite__icon--favList heart__favourite');
+    movieIconFav.setAttribute('title', 'Eliminar de favoritos')
 
     const movieTitle = document.createElement('p');
     movieTitle.setAttribute('class', 'favourite__title');
@@ -114,6 +112,11 @@ function printFavouriteList() {
     movieTitle.appendChild(movieTitleContent);
 
     addListenerToFavourites();
+  }
+  if(favouriteList.innerHTML !== '') {
+    removeFavButton.classList.remove('hidden')
+  } else {
+    removeFavButton.classList.add('hidden')
   }
 }
 

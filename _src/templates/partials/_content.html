@@ -1,13 +1,20 @@
 <main class="content">
-    <section class="favourites">
-      <div class="favourites__title">
-        <img class="favourite__section favourite__icon" src="./assets/images/favourite.png">
-        <h2>Mis favoritos</h2>
-      </div>
-      <ul class="favourites__list"></ul>
-      <button class="favourite__button--remove hidden">Borrar lista de favoritos</button>
-    </section>
-    <section class="results__box">
-      <ul class="results__list"></ul>
-    </section>
-  </main>
+  <section class="favourites">
+    <div class="favourites__title subtitle__section">
+      <img class="favourite__icon" src="./assets/images/favourite.png" />
+      <h2>Mis favoritos</h2>
+    </div>
+    <ul class="favourites__list"></ul>
+    <button class="favourite__remove--button hidden">
+      Borrar lista de favoritos
+    </button>
+  </section>
+  <section class="results__box">
+    <div class="subtitle__section">
+      <h2 class="results__title hidden">
+        RESULTADO PARA TU BÚSQUEDA: <span class="search__text"></span>
+      </h2>
+    </div>
+    <ul class="results__list"></ul>
+  </section>
+</main>

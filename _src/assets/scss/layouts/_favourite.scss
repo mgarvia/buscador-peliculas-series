@@ -1,18 +1,85 @@
-.favourite__item {
-    display: flex;
-    flex-direction: row;
-    margin: 2px;
-    .favourite__image {
-        height: 50px;
-        margin-right: 5px;
-        a {
-            img{
-                height: 100%;
-            }
-        }
+.favourites {
+  height: 100%;
+  width: 30%;
+  position: relative;
+  .favourites__title {
+    // position: fixed;
+    // top: 155px;
+    // width: 29%;
+    // height: 100px;
+    // background-color: white;
+    font-family: "Righteous";
+    // text-transform: uppercase;
+    font-size: 14px;
+    // z-index: 1;
+    .favourite__icon {
+      top: 45px;
     }
+    h2 {
+      margin-left: 50px;
+    }
+  }
+  .favourites__list {
+    // border: 1px solid red;
+    margin-top: 85px;
+    padding: 10px;
+    padding-right: 15px;
+  }
+  .favourite__remove--button {
+    position: relative;
+    width: 60%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    border-style: none;
+    border-radius: 25px;
+    padding: 10px;
+    margin-left: 15px;
+    &:hover {
+      background-color: grey;
+    }
+  }
+}
+.results__box {
+  width: 70%;
 }
 
-.hidden {
-    display: none;
+.favourite__item {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  .favourite__image {
+    height: 50px;
+    margin-right: 10px;
+    a {
+      img {
+        height: 100%;
+      }
+    }
+  }
+  .favourite__title {
+    font-size: 14px;
+  }
+}
+.favourite__icon {
+  height: 25px;
+  padding: 0 12px;
+  margin-right: 12px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 12px;
+  left: 5px;
+}
+.favourite__background {
+  background-color: #1f9c8d;
+  // padding: 5px 5px 0 5px;
+}
+.favourite__textColor {
+  color: #1f9c8d;
+}
+.heart__favourite {
+  background-image: url("/assets/images/favourite.png");
+}
+.heart__no-favourite {
+  background-image: url("/assets/images/no-favourite.png");
 }

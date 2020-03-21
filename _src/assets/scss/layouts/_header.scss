@@ -2,26 +2,103 @@
     position: fixed;
     top: 0;
     width: 100vw;
-    // height: 110px;
     padding: 15px;
-    // padding: 5px;
-    background-color: #3F3F3F;
+    background-color: $colorBackground;
     z-index: 2;
+    display: flex;
+    justify-content: center;
     .header__container {
         max-width: 800px;
-        margin: auto;
+
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        .logo__tvmaze {
-            max-height: 50px;
-            margin-right: 15px;
+        .logo__container {
+            // border: 1px solid red;
+            .movie__icon {
+                display: inline-block;
+                height:50px;
+                position: relative;
+                top: 4px;
+                padding-right: 4px;
+            }
+            .title__container {
+                position: relative;
+                display: inline-block;
+                .title__main {
+                    font-family: 'Righteous';
+                    font-weight: 300;
+                    text-transform: uppercase;
+                    font-size: 45px;
+                    .hidden-o {
+                        opacity: 0;
+                    }
+                        
+                }
+                .icon__search--container {
+                    position: absolute;
+                    top: 11.6px;
+                    right: 22px;
+                    width: 44px;
+                    .icon__search--logo {
+                        width: 100%;
+                    }
+                }
+            }
         }
-        .search__input {
-            width: 50%;
-            height: 32px;
-            border-radius: 25px;
+        .search__container {
+            margin: 10px;
+            width: 500px;
+            // border: 1px solid red;
+            // display: flex;
+            // flex-direction: row;
+            // justify-content: space-between;
+            form {
+                display: inline-flex;
+                // border: 1px solid blue;
+                width: 100%;
+                .search__input {
+                    // display: inline-block;
+                    width: 90%;
+                    height: 40px;
+                    padding-left: 10%;
+                    // padding-right: 50px;
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 16px;
+                    color: $colorFontSecondary;
+                    text-align: center;
+                    background-color: $colorMain;
+                    border-style: none;
+                    &::placeholder {
+                        color: $colorFontSecondary;
+                        text-transform: uppercase;
+                    }
+                    &:focus::placeholder {
+                        color: transparent;
+                        transition: ease all 0.3s;
+                    }
+                }
+                .search__button {
+                    width: 10%;
+                    background-color: $colorMain;
+                    border-style: none;
+                    // display: inline-block;
+                }
+            }
+
         }
+
     }
     
+}
+
+.moveIcon {
+    transform: translate(119px, 51px) scale(0.6);
+    transition: transform ease 0.8s;
+}
+
+.show-o {
+    opacity: 1;
+    transition: 1s opacity ease;
 }

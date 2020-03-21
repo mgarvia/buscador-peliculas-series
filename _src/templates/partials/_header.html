@@ -1,20 +1,24 @@
 <header class="header">
   <div class="header__container">
-    <img
-      class="logo__tvmaze"
-      src="http://static.tvmaze.com/images/tvm-header-logo.png"
-    />
-    <h1>Buscador de series</h1>
-    <div class="search__box">
+    <div class="logo__container">
+      <img class="movie__icon" src="./assets/images/movie-icon.png" />
+      <div class="title__container">
+        <h1 class="title__main">Buscad<span class="hidden-o" id="missing-o">o</span>r</h1>
+        <span class="icon__search--container .moveIcon"
+          ><img class="icon__search--logo" src="./assets/images/search-icon.png"
+        /></span>
+      </div>
+    </div>
+    <div class="search__container">
       <form>
         <label for="search__input"></label>
         <input
           type="text"
-          placeholder="Escribe el título de tu película favorita aquí"
+          placeholder="Series & películas"
           class="search__input"
           id="search__input"
         />
-        <button class="search__button">¡Busca tu película!</button>
+        <button class="search__button"></button>
       </form>
     </div>
   </div>

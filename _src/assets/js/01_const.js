@@ -1,11 +1,12 @@
 'use strict';
 
-// VARIABLES FOR BASIC FUNCTIONS
+// VARIABLES FOR BASIC FUNCTIONS //
 
 const searchInput = document.querySelector('#search__input');
 const searchButton = document.querySelector('.search__submit--button'); 
 const searchText = document.querySelector('.search__text');
 const resultTitle = document.querySelector('.results__title');
+const resultTitleBox = document.querySelector('.results__title--container');
 const resultsList = document.querySelector('.results__list');
 const favouriteList = document.querySelector('.favourites__list');
 const removeFavButton = document.querySelector('.favourite__remove--button');
@@ -15,15 +16,16 @@ let moviesSearchedList = null;
 let favouriteMovies = getFromLocal();
 
 
-// VARIABLES FOR ESTRA FUNCTIONS
+// VARIABLES FOR EXTRA FUNCTIONS //
 
 const form = document.querySelector('.search__form');
 const inputBox = document.querySelector('.search__container');
 const searchIcon = document.querySelector('.icon__search--container');
 const removeSearchBtn = document.querySelector('.search__remove--button');
 const titleSearch = document.querySelector('#missing-o');
+const favTitleSection = document.querySelector('.favourites__title--container')
 const favSection = document.querySelector('.favourites');
 const favListSection = document.querySelector('.favourites__list--container')
 const favMessage = document.querySelector('.favourites__list--message');
 const welcome = document.querySelector('.landing');
-const welcomeText = document.querySelector('.welcome');
+const welcomeText = document.querySelector('.welcome__text');

@@ -1,15 +1,12 @@
-// GENERAL STRUCTURE
+// GENERAL STRUCTURE STYLES //
 
 .page {
   height: 100vh;
   max-width: 1500px;
   margin: auto;
   color: $colorFontMain;
-  // position: relative;
   .content {
     min-height: 85%;
-    padding-top: 170px;
-    padding-bottom: 30px;
     @include bodyFont;
     @include forTablet {
       display: flex;
@@ -18,24 +15,14 @@
       @include favouritesWidth;
       .favourites__title--container {
         @include favouritesWidth;
+
       }
-      // @include forTablet {
-      //   width: 50vw;
-      // }
-      // @include forPc {
-      //   width: 25vw;
-      // }
       .favourites__list {
         @include favouritesWidth;
       }
     }
     .results {
-      @include forTablet {
-        width: 50vw;
-      }
-      @include forPc {
-        width: 85vw;
-      }
+      @include resultsWidth;
     }
   }
 }

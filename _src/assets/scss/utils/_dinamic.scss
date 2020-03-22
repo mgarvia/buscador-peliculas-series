@@ -1,4 +1,11 @@
-// ESTILOS DINÁMICOS JS
+// DINAMIC JS STYLES //
+
+.hidden {
+  display: none;
+}
+
+
+//Header
 
 .hide-o {
   opacity: 0;
@@ -30,10 +37,59 @@
   }
 }
 
-.movie__favourite {
-  // background-image: url("/assets/images/movie-icon.png");
-  background-image: url("/assets/images/favourite.png");
+@keyframes input__shadow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(199, 208, 216, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(199, 208, 216, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(199, 169, 216, 0);
+  }
 }
-.hidden {
-  display: none;
+
+
+//Favourites
+
+.favourite__item {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  .favourite__image {
+    height: 50px;
+    margin-right: 10px;
+    a {
+      img {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.favourite__icon {
+  @include favourite__icon;
+  margin-right: 12px;
+  top: 12px;
+  left: 5px;
+}
+
+.favourite__background {
+  background-color: #1f9c8d;
+}
+.favourite__textColor {
+  color: #1f9c8d;
+}
+
+.heart__favourite {
+  background-image: url("/assets/images/favourite.png");
+  &:hover {
+    background-image: url("/assets/images/no-favourite.png");
+  }
+}
+.heart__no-favourite {
+  background-image: url("/assets/images/no-favourite.png");
+  &:hover {
+    background-image: url("/assets/images/favourite.png");
+  }
 }

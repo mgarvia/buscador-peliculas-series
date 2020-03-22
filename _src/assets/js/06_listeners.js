@@ -5,12 +5,12 @@ window.addEventListener('load', printFavouriteList);
 removeFavButton.addEventListener('click', removeAllFavourites);
 
 
-// LISTENERS DE FUNCIONES EXTRA
+// LISTENERS FOR FUNCIONES EXTRA //
 searchInput.addEventListener('mouseover', changePlaceholder);
 searchInput.addEventListener('mouseout', originalPlaceholder);
-searchInput.addEventListener('click', moveSearchInput);
+searchInput.addEventListener('click', moveSearchIcon);
 searchInput.addEventListener('focusout', originalTitle);
 searchInput.addEventListener('focus', enableSearchButton)
 welcomeText.addEventListener('click', setPointerInInput);
 form.addEventListener('invalid', disableValidationMessage,true);
-favSection.addEventListener('click', showFavList)
+favTitleSection.addEventListener('click', showFavList)

@@ -1,82 +1,80 @@
 'use strict'
 
 function changePlaceholder() {
-    searchInput.placeholder = 'Escribe un título aquí';
+  searchInput.placeholder = 'Escribe un título aquí';
 }
 
 function originalPlaceholder() {
-    searchInput.placeholder = 'Series & películas';
+  searchInput.placeholder = 'Series & películas';
 }
 
-function moveSearchInput() {
+function moveSearchIcon() {
 
-    searchIcon.classList.add('moveIcon');
-    titleSearch.classList.add('show-o');
-    titleSearch.classList.remove('hide-o');
-    inputBox.classList.remove('input__shadow');
+  searchIcon.classList.add('moveIcon');
+  titleSearch.classList.add('show-o');
+  titleSearch.classList.remove('hide-o');
+  inputBox.classList.remove('input__shadow');
 
-    addListenerToSearchIcon();
-    addRemoveSearchButton()
+  addListenerToSearchIcon();
+  addRemoveSearchButton()
 }
 
 function addListenerToSearchIcon() {
-    searchIcon.addEventListener('click', searchMovies);
-    searchIcon.style.cursor = 'pointer';
+  searchIcon.addEventListener('click', searchMovies);
+  searchIcon.style.cursor = 'pointer';
 }
 
 function addRemoveSearchButton() {
-    removeSearchBtn.classList.remove('hidden');
-    addListenerToRemoveBtn();
+  removeSearchBtn.classList.remove('hidden');
+  addListenerToRemoveBtn();
 }
 
 function addListenerToRemoveBtn() {
-    removeSearchBtn.addEventListener('click', removeTextSearch)
+  removeSearchBtn.addEventListener('click', removeTextSearch)
 }
 
 function removeTextSearch() {
-    searchInput.value = '';
-    searchInput.focus();
-    inputBox.classList.add('input__shadow');
+  searchInput.value = '';
+  searchInput.focus();
+  inputBox.classList.add('input__shadow');
 }
 
 function originalTitle() {
-    if (searchInput.value !== '') {
-        searchIcon.classList.add('moveIcon');
-        titleSearch.classList.add('show-o');
-        titleSearch.classList.remove('hide-o');
-        removeSearchBtn.classList.remove('hidden');
-    } else {
-        searchIcon.style.cursor = '';
-        searchIcon.classList.remove('moveIcon');
-        titleSearch.classList.remove('show-o');
-        titleSearch.classList.add('hide-o');
-        removeSearchBtn.classList.add('hidden');
-    }
+  if (searchInput.value !== '') {
+    searchIcon.classList.add('moveIcon');
+    titleSearch.classList.add('show-o');
+    titleSearch.classList.remove('hide-o');
+    removeSearchBtn.classList.remove('hidden');
+  } else {
+    searchIcon.style.cursor = '';
+    searchIcon.classList.remove('moveIcon');
+    titleSearch.classList.remove('show-o');
+    titleSearch.classList.add('hide-o');
+    removeSearchBtn.classList.add('hidden');
+  }
 }
 
 function setPointerInInput() {
-        searchInput.focus();
-        moveSearchInput()
+  searchInput.focus();
+  moveSearchIcon()
 }
 
 function enableSearchButton() {
-    searchButton.removeAttribute('disabled', 'disabled')
+  searchButton.removeAttribute('disabled', 'disabled')
 }
 
 function disableValidationMessage(event) {
-    event.preventDefault() 
+  event.preventDefault() 
 }
 
 function showFavList() {
-    if(screen.width < 768) {
-        if( favListSection.style.display !== 'inherit') {
-            favListSection.style.display = 'inherit';
-            // resultTitle.style.display = 'none';
-        } else {
-            favListSection.style.display = 'none';
-            // resultTitle.style.display = 'inherit';
-        }
+  if(screen.width < 768) {
+    if( favListSection.style.display !== 'inherit') {
+      favListSection.style.display = 'inherit';
     } else {
-        favListSection.style.display = 'block';
+      favListSection.style.display = 'none';
     }
+  } else {
+    favListSection.style.display = 'block';
+  }
 }

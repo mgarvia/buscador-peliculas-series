@@ -1,11 +1,16 @@
+// FOOTER STYLES //
+
 .footer {
     width: 100%;
     background-color: white;
     border-top: 1px solid lightgray;
     padding: 10px;
     .footer__logo--container{
-      width: 150px;
       margin: auto;
+      width: 80px;
+      @include forTablet {
+        width: 150px;
+      }
       img {
         width: 100%;
       }

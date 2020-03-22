@@ -1,39 +1,32 @@
+// LANDING STYLES //
+
 .landing {
-  margin: auto;
-    // height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .welcome {
-        font-size: 50px;
-        font-family: 'Righteous';
-        text-transform: uppercase;
-        color: #C7D0D8;
-    }
-    .welcome__gif {
-        width: 80px;
-    }
-}
-
-// .input__shadow {
-//   box-shadow: 0 0 0 rgba(204,169,44, 0.4);
-//   animation: input__shadow 2s infinite;
-//   &:hover, &:focus {
-//     animation: none;
-//   }
-// }
-
-@keyframes input__shadow {
-    0% {
-        box-shadow: 0 0 0 0 rgba(199,208,216, 0.7);
-      }
-      70% {
-        box-shadow: 0 0 0 20px rgba(199,208,216, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(199,169,216, 0);
-      }
+  position: relative;
+  top: 210px;
+  height: 40vh;
+  padding: 0px 60px;
+  line-height: 1.5;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include forTablet {
+    padding: 30px;
   }
+  .welcome__text {
+    font-size: 25px;
+    font-family: $fontTitle;
+    text-transform: uppercase;
+    color: #c7d0d8;
+    @include forTablet {
+      font-size: 40px;
+    }
+    @include forPc {
+      font-size: 50px;
+    }
+  }
+  .welcome__gif {
+    width: 80px;
+  }
+}

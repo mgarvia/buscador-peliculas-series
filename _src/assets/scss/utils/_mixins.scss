@@ -43,6 +43,14 @@
 
 // STRUCTURE //
 
+@mixin contentPaddings {
+  padding-bottom: 30px;
+  @include forTablet {
+    padding-top: 170px;
+  padding-bottom: 30px;
+  }
+}
+
 @mixin favouritesWidth {
   width: 100vw;
   @include forTablet {
@@ -53,13 +61,21 @@
   }
 }
 
+@mixin resultsWidth {
+  width: 100vw;
+  @include forTablet {
+    width: 50vw;
+  }
+  @include forPc {
+    width: 75vw;
+  }
+}
+
 @mixin subtitle {
   position: fixed;
-  top: 140px;
-  height: 70px;
+  right: 0px;
   background-color: $colorBackground;
   text-transform: uppercase;
-  z-index: 1;
   @include forTablet {
     height: 100px;
   }
@@ -70,11 +86,8 @@
 
 @mixin favourite__icon {
     height: 25px;
-    // padding: 0 12px;
-    // margin-right: 12px;
+    padding: 0 12px;
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
-    // top: 12px;
-    // left: 5px;
 }

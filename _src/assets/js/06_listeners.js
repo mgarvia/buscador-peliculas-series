@@ -9,6 +9,8 @@ removeFavButton.addEventListener('click', removeAllFavourites);
 searchInput.addEventListener('mouseover', changePlaceholder);
 searchInput.addEventListener('mouseout', originalPlaceholder);
 searchInput.addEventListener('click', moveSearchInput);
-searchInput.addEventListener('keyup', originalTitle);
+searchInput.addEventListener('focusout', originalTitle);
 searchInput.addEventListener('focus', enableSearchButton)
-welcomeText.addEventListener('click', setPointerInInput)
+welcomeText.addEventListener('click', setPointerInInput);
+form.addEventListener('invalid', disableValidationMessage,true);
+favSection.addEventListener('click', showFavList)

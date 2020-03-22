@@ -1,0 +1,80 @@
+// DEVICES //
+
+@mixin forTablet {
+  @media all and (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin forPc {
+  @media all and (min-width: $pc) {
+    @content;
+  }
+}
+
+// TIPOGRAPHY //
+
+@mixin bodyFont {
+  font-family: $fontbody;
+  font-size: 14px;
+  @include forTablet {
+    font-size: 16px;
+  }
+}
+
+@mixin titleFont {
+  font-family: $fontTitle;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 35px;
+  @include forTablet {
+    font-size: 45px;
+  }
+}
+
+@mixin subtitleFont {
+  font-family: $fontTitle;
+  font-size: 12px;
+  text-align: center;
+  @include forTablet {
+    font-size: 14px;
+  }
+}
+
+// STRUCTURE //
+
+@mixin favouritesWidth {
+  width: 100vw;
+  @include forTablet {
+    width: 50vw;
+  }
+  @include forPc {
+    width: 25vw;
+  }
+}
+
+@mixin subtitle {
+  position: fixed;
+  top: 140px;
+  height: 70px;
+  background-color: $colorBackground;
+  text-transform: uppercase;
+  z-index: 1;
+  @include forTablet {
+    height: 100px;
+  }
+}
+
+
+// SHARED STYLES //
+
+@mixin favourite__icon {
+    height: 25px;
+    // padding: 0 12px;
+    // margin-right: 12px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    // top: 12px;
+    // left: 5px;
+}

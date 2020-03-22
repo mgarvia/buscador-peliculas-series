@@ -10,18 +10,18 @@ function originalPlaceholder() {
 
 function moveSearchInput() {
 
-    iconSearch.classList.add('moveIcon');
+    searchIcon.classList.add('moveIcon');
     titleSearch.classList.add('show-o');
-    titleSearch.classList.remove('hidden-o');
+    titleSearch.classList.remove('hide-o');
     inputBox.classList.remove('input__shadow');
 
-    addListenerToIconSearch();
+    addListenerToSearchIcon();
     addRemoveSearchButton()
 }
 
-function addListenerToIconSearch() {
-    iconSearch.addEventListener('click', searchMovies);
-    iconSearch.style.cursor = 'pointer';
+function addListenerToSearchIcon() {
+    searchIcon.addEventListener('click', searchMovies);
+    searchIcon.style.cursor = 'pointer';
 }
 
 function addRemoveSearchButton() {
@@ -35,21 +35,21 @@ function addListenerToRemoveBtn() {
 
 function removeTextSearch() {
     searchInput.value = '';
+    searchInput.focus();
     inputBox.classList.add('input__shadow');
-    originalTitle();
 }
 
 function originalTitle() {
     if (searchInput.value !== '') {
-        iconSearch.classList.add('moveIcon');
+        searchIcon.classList.add('moveIcon');
         titleSearch.classList.add('show-o');
-        titleSearch.classList.remove('hidden-o');
+        titleSearch.classList.remove('hide-o');
         removeSearchBtn.classList.remove('hidden');
     } else {
-        iconSearch.style.cursor = '';
-        iconSearch.classList.remove('moveIcon');
+        searchIcon.style.cursor = '';
+        searchIcon.classList.remove('moveIcon');
         titleSearch.classList.remove('show-o');
-        titleSearch.classList.add('hidden-o');
+        titleSearch.classList.add('hide-o');
         removeSearchBtn.classList.add('hidden');
     }
 }
@@ -61,4 +61,22 @@ function setPointerInInput() {
 
 function enableSearchButton() {
     searchButton.removeAttribute('disabled', 'disabled')
+}
+
+function disableValidationMessage(event) {
+    event.preventDefault() 
+}
+
+function showFavList() {
+    if(screen.width < 768) {
+        if( favListSection.style.display !== 'inherit') {
+            favListSection.style.display = 'inherit';
+            // resultTitle.style.display = 'none';
+        } else {
+            favListSection.style.display = 'none';
+            // resultTitle.style.display = 'inherit';
+        }
+    } else {
+        favListSection.style.display = 'block';
+    }
 }

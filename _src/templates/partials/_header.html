@@ -1,25 +1,20 @@
 <header class="header">
   <div class="header__container">
-    <div class="logo__container">
-      <img class="movie__icon" src="./assets/images/movie-icon.png" />
+    <div>
+      <img class="icon__movie" src="./assets/images/movie-icon.png" alt="logo buscador">
       <div class="title__container">
-        <h1 class="title__main">Buscad<span class="hidden-o" id="missing-o">o</span>r</h1>
-        <span class="icon__search--container .moveIcon"
-          ><img class="icon__search--logo" src="./assets/images/search-icon.png"
-        /></span>
+        <h1 class="title__main" aria-label="Buscador">Buscad<span class="hide-o" id="missing-o">o</span>r</h1>
+        <span class="icon__search--container .moveIcon">
+          <img class="icon__search" src="./assets/images/search-icon.png" alt="icono buscador">
+        </span>
       </div>
     </div>
     <div class="search__container input__shadow">
-      <form>
+      <form method="post" class="search__form" autocomplete="on">
         <label for="search__input"></label>
-        <input
-          type="text"
-          placeholder="Series & películas"
-          class="search__input"
-          id="search__input" title="" required
-        />
-        <button class="search__button " disabled="disabled"></button>
-        <button class="remove__search--button hidden">X</button>
+        <input type="text" placeholder="Series & películas" class="search__input" id="search__input" title="" required/>
+        <button type="submit" class="search__submit--button" disabled="disabled"></button>
+        <button class="search__remove--button hidden" title="Borrar texto">x</button>
       </form>
     </div>
   </div>

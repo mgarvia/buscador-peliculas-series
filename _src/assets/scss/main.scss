@@ -1,8 +1,9 @@
+@import 'base/normalize';
 @import 'utils/variables';
+@import 'utils/mixins';
 @import 'layouts/landing';
 @import 'layouts/structure';
 @import 'layouts/header';
-@import 'layouts/search';
 @import 'layouts/results';
 @import 'layouts/favourite';
 @import 'layouts/footer';

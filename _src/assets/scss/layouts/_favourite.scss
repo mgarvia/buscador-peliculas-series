@@ -1,26 +1,97 @@
 .favourites {
-  height: 100%;
-  width: 25vw;
-  position: relative;
-  .favourites__title {
-    font-family: "Righteous";
-    font-size: 14px;
+  // height: 100%;
+  // width: 25vw;
+  // position: relative;
+  // @include forTablet {
+  //   width: 50vw;
+  // }
+  // @include forPc {
+  //   width: 25vw;
+  // }
+  border: 1px solid red;
+  .favourites__title--container {
+    @include subtitle;
+    @include subtitleFont;
     text-align: center;
-    padding-left: 10px;
-    width: 24%;
-    .favourite__icon {
-      top: 45px;
-      left: -70px;
-    }
-    h2 {
-      margin-left: 35px;
-    }
-  }
-  .favourites__list {
-    margin-top: 85px;
     padding: 10px;
-    padding-right: 15px;
+    left: 0px;
+    z-index: 2;
+    // font-family: "Righteous";
+    // font-size: 14px;
+    // padding-left: 10px;
+    // width: 24%;
+    border: 1px solid blue;
+    .favourites__title {
+      position: relative;
+      top: -50%;
+      @include forTablet {
+        position: static;
+      }
+      .favourites__title--icon {
+        @include favourite__icon;
+        // display: inline-block;
+        top: 38px;
+        left: -75px;
+        @include forTablet {
+          top: 43px;
+          left: -97px;
+        }
+      }
+      .favourites__title--text {
+        // display: inline-block;
+        padding-left: 18px;
+        @include forTablet {
+          padding: 0px;
+        }
+        .favourite__title--arrow {
+          // width: 30px; 
+          // height: 30px; 
+          // transform: translateX(-50%) rotate(45deg);
+          // background-color: $colorMain;
+          border-left: 8px solid $colorMain;
+          border-top: 8px solid transparent;
+          border-bottom: 8px solid transparent; 
+          transform: translateX(-50%) rotate(90deg);
+          position: absolute;
+          bottom: -9px;
+          right:81px;
+          @include forTablet {
+            display: none;
+          }
+        }
+      }
+    }
   }
+  .favourites__list--container {
+    display: none;
+    background-color: $colorBackground;
+    z-index: 1;
+    @include forTablet {
+        display: inherit;
+        position: static;
+    }
+    .favourites__list {
+      // width: 100%;
+      margin-top: 40px;
+      padding: 10px;
+      padding-right: 15px;
+      @include forTablet {
+        margin-top: 85px;
+      }
+    }
+    .favourites__list--message {
+      @include bodyFont;
+      text-align: center;
+      padding-top: 30px;
+      @include forTablet {
+        padding-top: 0px;
+      }
+      .favourites__message--heart {
+        display: inline-block;
+      }
+    }
+  }
+  
   .button__container {
     text-align: center;
     .favourite__remove--button {
@@ -82,10 +153,4 @@
     background-image: url("/assets/images/favourite.png");
   }
 }
-.favourites__message {
-  font-size: 14px;
-  text-align: center;
-  .favourites__message--heart {
-    display: inline-block;
-  }
-}
+

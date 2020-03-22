@@ -4,6 +4,7 @@ function removeAllFavourites() {
   removeStyleDisplayed()
   removeFavList()
   removeFromLocal();
+  favMessage.classList.remove('hidden')
 }
 
 function removeStyleDisplayed() {

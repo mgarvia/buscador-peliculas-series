@@ -10,37 +10,31 @@
   @include subtitleFont;
   text-align: center;
   .favourites__title {
-    position: relative;
-    top: -50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     @include forTablet {
-      position: static;
+      position: relative;
+      top: 25%;
     }
     .favourites__title--icon {
       @include favourite__icon;
-      top: 38px;
-      left: -75px;
-      @include forTablet {
-        top: 43px;
-        left: -97px;
-      }
+      padding: 0 5px;
+      display: inline-block;
     }
     .favourites__title--text {
-      padding-left: 18px;
-
+      display: inline-block;
       @include forTablet {
         padding: 0px;
       }
-      .favourite__title--arrow {
-        border-left: 8px solid $colorMain;
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-        transform: translateX(-50%) rotate(90deg);
-        position: absolute;
-        bottom: -9px;
-        right: 81px;
-        @include forTablet {
-          display: none;
-        }
+    }
+    .favourites__title--arrow {
+      font-size: 35px;
+      transform: rotate(180deg);
+      position: relative;
+      right: -5px;
+      @include forTablet {
+        display: none;
       }
     }
   }
@@ -78,6 +72,11 @@
     padding-top: 30px;
     @include forTablet {
       padding-top: 10px;
+      position: fixed;
+      width: 50%;
+    }
+    @include forPc {
+      width: 25%;
     }
     .favourites__message--heart {
       @include favourite__icon;

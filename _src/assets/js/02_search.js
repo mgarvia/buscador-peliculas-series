@@ -17,7 +17,7 @@ function printSearchResult(moviesArr) {
   resultsList.innerHTML = '';
   searchText.innerHTML = `"${searchInput.value}"`;
   resultTitle.classList.remove('hidden');
-  resultTitleBox.style.borderBottom= '1px solid lightgrey';
+  resultTitleBox.style.borderBottom = '1px solid lightgrey';
 
   for (let movie of moviesArr) {
     let movieImage = movie.show.image;

@@ -120,10 +120,10 @@ function printFavouriteList() {
   } else {
     removeFavButton.classList.add('hidden')
     favMessage.classList.remove('hidden')
-    favTitleSection.style.boxShadow = 'none';
+    favTitleSection.style.borderBottom = 'none';
   }
   if(resultsList === '') {
-    resultTitleBox.style.boxShadow= 'none';
+    resultTitleBox.style.borderBottom = 'none';
   }
 }
 

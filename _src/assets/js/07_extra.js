@@ -73,6 +73,7 @@ function showFavList() {
       favListSection.style.display = 'inherit';
     } else {
       favListSection.style.display = 'none';
+      favTitleSection.style.borderBottom = 'none';
     }
   } else {
     favListSection.style.display = 'block';

@@ -82,14 +82,14 @@
 }
 
 .heart__favourite {
-  background-image: url("./assets/images/favourite.png");
+  background-image: url("/assets/images/favourite.png");
   &:hover {
-    background-image: url("./assets/images/no-favourite.png");
+    background-image: url("/assets/images/no-favourite.png");
   }
 }
 .heart__no-favourite {
-  background-image: url("./assets/images/no-favourite.png");
+  background-image: url("/assets/images/no-favourite.png");
   &:hover {
-    background-image: url("./assets/images/favourite.png");
+    background-image: url("/assets/images/favourite.png");
   }
 }

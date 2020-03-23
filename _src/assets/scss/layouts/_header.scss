@@ -27,24 +27,28 @@
         height: 50px;
       }
     }
-    .title__container {
-      position: relative;
-      display: inline-block;
-      .title__main {
-        @include titleFont;
-      }
-      .icon__search--container {
-        position: absolute;
-        top: 6.4px;
-        right: 17px;
-        width: 34px;
-        @include forTablet {
-          top: 7.6px;
-          right: 22px;
-          width: 44px;
+    .title__logo--container {
+      text-decoration: none;
+      color: inherit;
+      .title__container {
+        position: relative;
+        display: inline-block;
+        .title__main {
+          @include titleFont;
         }
-        .icon__search {
-          width: 100%;
+        .icon__search--container {
+          position: absolute;
+          top: 6.4px;
+          right: 17px;
+          width: 34px;
+          @include forTablet {
+            top: 7.6px;
+            right: 22px;
+            width: 44px;
+          }
+          .icon__search {
+            width: 100%;
+          }
         }
       }
     }

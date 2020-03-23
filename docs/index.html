@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Buscador de series</title>
+        <link rel="icon" href="./favicon.png" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Righteous&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/main.css" />
+    </head>
+    
+    <body>
+        <div class="page">
+            <header class="header">
+                <div class="header__container">
+                    <div>
+                        <img class="icon__movie" src="./assets/images/movie-icon.png" alt="logo buscador">
+                        <div class="title__container">
+                             <h1 class="title__main" aria-label="Buscador">Buscad<span class="hide-o" id="missing-o">o</span>r</h1> <span class="icon__search--container .moveIcon">
+
+          <img class="icon__search" src="./assets/images/search-icon.png" alt="icono buscador">
+
+        </span>
+                        </div>
+                    </div>
+                    <div class="search__container input__shadow">
+                        <form method="post" class="search__form" autocomplete="on">
+                            <label for="search__input"></label>
+                            <input type="text" placeholder="Series & películas" class="search__input"
+                            id="search__input" title="" required/>
+                            <button type="submit" class="search__submit--button" disabled="disabled"></button>
+                            <button class="search__remove--button hidden" title="Borrar texto">x</button>
+                        </form>
+                    </div>
+                </div>
+            </header>
+            <main class="content">
+                <section class="favourites">
+                    <div class="favourites__title--container">
+                        <div class="favourites__title">
+                            <img class="favourites__title--icon" src="./assets/images/favourite.png"
+                            alt="icono favoritos" />
+                             <h2 class="favourites__title--text">Mis favoritos</h2>
+                            <div class="favourites__title--arrow">^</div>
+                        </div>
+                    </div>
+                    <div class="favourites__list--container">
+                        <ul class="favourites__list"></ul>
+                        <p class="favourites__list--message">¡Guarda tu primer favorito!
+                            <br />Pincha en <span class="heart__no-favourite favourites__message--heart"></span> en
+                            la película</p>
+                        <div class="button__container">
+                            <button class="favourite__remove--button hidden">Borrar lista de favoritos</button>
+                        </div>
+                    </div>
+                </section>
+                <section class="results">
+                    <div class="landing">
+                        <div class="landing__content">
+                             <h2 class="welcome__text">¿Qué quieres ver hoy?</h2>
+                            <img class="welcome__gif" src="https://media.giphy.com/media/UGcvSDgGsKFby/giphy.gif"
+                            alt="gif landing" />
+                        </div>
+                    </div>
+                    <div>
+                        <div class="results__title--container">
+                             <h2 class="results__title hidden">
+
+        RESULTADO PARA TU BÚSQUEDA: <span class="search__text"></span>
+
+      </h2>
+                        </div>
+                    </div>
+                    <ul class="results__list"></ul>
+                </section>
+            </main>
+            <footer class="footer">
+                <div class="footer__logo--container"> <a href="www.adalab.es" title="Ir a Adalab"><img src="./assets/images/logo-adalab-80px.png" alt="logo adalab"></a>
+                </div>
+            </footer>
+        </div>
+        <script type="text/javascript" src="./assets/js/main.js"></script>
+    </body>
+
+</html>
